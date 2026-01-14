@@ -1,0 +1,14 @@
+ROUTER 1
+Router> enable
+Router# configure terminal
+Router(config)# interface g0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+Router(config)# interface g0/1
+Router(config-if)# ip address 10.10.10.1 255.255.255.252
+Router(config-if)# no shutdown
+Router(config-if)# exit
+! Static Route ke jaringan R2
+Router(config)# ip route 192.168.2.0 255.255.255.0 10.10.10.2
+ROUTER 2
